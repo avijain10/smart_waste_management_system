@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+        <h1>Your Feedback Is Very Valuable To Us</h1>
+        <title>feedback</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h:form>
+         <h2>Select Our Service on a Scale of One to Five</h2> 
+         <h:selectOneRadio value = "#{feedback.rating}">
+            <f:selectItem itemValue = "Poor -- 1 STAR" itemLabel = "1" />
+            <f:selectItem itemValue = "Not Good -- 2 STARS" itemLabel = "2" />
+            <f:selectItem itemValue = "Average -- 3 STARS" itemLabel = "3" />
+            <f:selectItem itemValue = "Good -- 4 STARS" itemLabel = "4" />
+            <f:selectItem itemValue = "Excellent -- 5 STARS" itemLabel = "5" />
+            </h:selectOneRadio>
+            <br/><br/>
+            
+            <h:outputLabel for="feedback text">
+            <h:outputText value="Write something so that we can improve(Write NA if everything is fine as per you)"></h:outputText>
+            <h:inputText id="ftext" value="#{feedback.ftext}" validatorMessage="Text is required to be entered!">
+            <f:validateRequired /> 
+            <f:validateLength id="ftext" minimum="2" maximum="100"></f:validateLength>
+            </h:inputText>
+            </h:outputLabel>
+            <br/><br/>
+             <h:commandButton id="submitfeeedback" value="Show Feedback" action="show_feedback.xhtml?faces-redirect=true"/>
+            <br/><br/>
+            
+        </h:form>    
+    </h:body>
+</html>

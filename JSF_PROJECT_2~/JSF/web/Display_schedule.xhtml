@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"   
+   xmlns:h = "http://java.sun.com/jsf/html"
+   xmlns:ui = "http://java.sun.com/jsf/facelets"
+   xmlns:f="http://xmlns.jcp.org/jsf/core">
+   
+   <h:body>
+       <h:form>
+       <h1>CONFIRMED PICKUP!</h1>
+       <hr/>
+       <br/>
+        <h:outputText value=" Today's Date : "></h:outputText>
+       <h:outputText value="#{scheduleData.date}">
+           <f:convertDateTime type="date" dateStyle="medium" />
+       </h:outputText>
+     <br/>
+     <br/> 
+     <h:outputText value=" Alloted Pickup Time : "></h:outputText>
+       <h:outputText value="#{scheduleData.date}">
+           <f:convertDateTime type="time" dateStyle="full" />
+       </h:outputText>
+     <br/>
+     <br/> 
+      #{scheduleData.data2} <br/> <br/>
+      #{scheduleData.data1} <br/> <br/>
+      <ui:repeat value = "#{scheduleData.data}" var = "s">		
+         #{s}
+      </ui:repeat>  
+<br/> <br/>
+      <h:commandButton id="submitfeeedback" value="Show Driver Details" action="driver.xhtml"/>
+</h:form>
+   </h:body>
+</html> 
+

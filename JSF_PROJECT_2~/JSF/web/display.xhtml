@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+     
+      >
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h4>  Full Name: </h4>  #{n1.firstname} 
+                  #{n1.lastname} 
+        <h4> Permanent Address:</h4> #{n1.address}  
+        <h4> Phone Number: </h4> #{n1.contactnumber} 
+        <h4> Email Address: </h4>  #{n1.emadd} 
+                <br/>
+                <BR/>
+                <h:form>
+                     <h:commandButton id="submit" value="Schedule New Pickup" action="schedule_pickup.xhtml"></h:commandButton>
+            <br/>
+            <br/>
+                </h:form>
+    </body>
+</html>

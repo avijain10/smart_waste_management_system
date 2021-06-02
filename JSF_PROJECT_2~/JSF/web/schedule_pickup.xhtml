@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+      <h:head>
+        <title>JSP PROJECT</title>
+    </h:head>
+    <h:body>
+        <h1>SCHEDULE YOUR PICKUP!</h1>
+        <hr/>
+        <h:form>
+            
+            <h:outputLabel for="tdate">
+            <h:outputText value="Enter Today's Date"></h:outputText>
+            <h:inputText id="tdate" value="#{scheduleData.date}"   converterMessage="Date is required to be entered in correct format (dd-mm-yyyy)">  
+                <f:convertDateTime pattern="dd-mm-yyyy" ></f:convertDateTime>     
+            </h:inputText> <BR/>
+            <h:outputText value="Required Date format (dd-mm-yyyy)"  style = "color:red" ></h:outputText>
+            </h:outputLabel>
+            <br/> <br/>
+            
+            
+            <h2>Select Day of Schedule</h2>  
+         <h:selectOneListbox value = "#{scheduleData.data2}"> 
+            <f:selectItem itemValue = "Selected Day: Monday" itemLabel = "Monday" /> 
+            <f:selectItem itemValue = "Selected Day: Tuesday" itemLabel = "Tuesday" /> 
+            <f:selectItem itemValue = "Selected Day: Wednesday" itemLabel = "Wednesday" /> 
+            <f:selectItem itemValue = "Selected Day: Thursday" itemLabel = "Thursday" /> 
+            <f:selectItem itemValue = "Selected Day: Friday" itemLabel = "Friday" />   
+            <f:selectItem itemValue = "Selected Day: Saturday" itemLabel = "Saturday" />  
+         </h:selectOneListbox> 
+            
+            
+            <h2>Repetition of Schedule</h2> 
+         <h:selectOneRadio value = "#{scheduleData.data1}">
+            <f:selectItem itemValue = "Schedule Repetition Cycle: DAILY" itemLabel = "Repeat Daily" />
+            <f:selectItem itemValue = "Schedule Repetition Cycle: WEEKLY" itemLabel = "Repeat Weekly" />
+           
+         </h:selectOneRadio>
+            
+            <h2>Category of Waste</h2> 
+            <h:selectManyCheckbox value = "#{scheduleData.data}" >
+            <f:selectItem itemValue = "Category of Waste: Recyclable Waste....." itemLabel = "Recyclables"   /> 
+            <f:selectItem itemValue = "Category of Waste: Wet Waste....." itemLabel = "Wet Waste" />   
+            <f:selectItem itemValue = "Category of Waste: Dry Waste....." itemLabel = "Dry Waste" />   
+            <f:selectItem itemValue = "Category of Waste: E-Waste....." itemLabel = "E-Waste" />     
+           
+         </h:selectManyCheckbox>
+           <br/><br/>
+             <h:commandButton id="submit" value="View Schedule" action="Display_schedule.xhtml"></h:commandButton>
+               <br/><br/>
+               
+              
+        </h:form>
+    </h:body>
+</html>
